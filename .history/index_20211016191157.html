@@ -286,19 +286,13 @@
         /* Parallax Styles */
         .parallax-container {
             position: relative;
+            width: 100%;
             height: 100%;
-            width:100%;
             overflow-x: hidden;
             overflow-y: scroll;
             perspective: 8px;
             perspective-origin: 0%;
             display: flex;
-
-            /* Create the parallax scrolling effect */
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
         }
 
         .background {
@@ -311,15 +305,15 @@
         }
 
         .foreground {
-            /* margin-top: auto; */
-            /* margin-bottom: 50px; */
+            margin-top: auto;
+            margin-bottom: 50px;
 
-            /* transform-origin: 0;
-            transform: translateZ(3px) scale(0.625); */
+            transform-origin: 0;
+            transform: translateZ(3px) scale(0.625);
 
             /* Uncomment the code below to see the difference the scale property makes! */
-            transform: translateZ(3px);
-            transform: translateZ(0) scale(1);
+            /* transform: translateZ(3px); */
+            /* transform: translateZ(0) scale(1); */
         }
     </style>
 
