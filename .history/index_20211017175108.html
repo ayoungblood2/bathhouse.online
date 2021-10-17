@@ -281,7 +281,7 @@
 
         .background {
             background-color: none;
-            background: url('images/20211010224425098_2.jpeg') repeat;
+            /* background: url('images/20211010224425098.gif') repeat; */
             background-repeat: no-repeat;
             background-position-x: 50%;
             position: relative;
@@ -292,9 +292,9 @@
             /* z-index: -1; */
 
             background-position: center;
-           background-size: cover;
+            background-size: cover;
 
-            /* display: grid; */
+            display: grid;
             height: 100%;
 
             overflow: visible;
@@ -303,7 +303,7 @@
 
         .background1 img {
             background-color: none;
-            background: url('images/20211010224425098.gif') repeat;
+            /* background: url('images/20211010224425098.gif') repeat; */
             background-repeat: no-repeat;
             background-position-x: 50%;
             position: fixed;
@@ -386,7 +386,7 @@
     <!-- <div id="background"></div> -->
    
     <div class="background">
-        <!-- <img src="images/20211010224425098_2.jpeg" alt="Static: Bathhouse - Steamworks, Canada" loading="lazy"> -->
+        <img src="images/20211010224425098_2.jpeg" alt="Static: Bathhouse - Steamworks, Canada" loading="lazy">
         <details open>
             <!--added role=button to summary to resolve iOS funkiness-->
             <summary role="button" aria-label="static image"></summary>
@@ -571,7 +571,7 @@
     function parallax() {
         /* Only get the image height once */
         if (imgHeight === false) {
-            var image_url = $('.background1').css('background-image'),
+            var image_url = $('.background').css('background-image'),
                 image;
 
             // Remove url() or in case of Chrome url("")
@@ -595,7 +595,7 @@
         var documentHeight = getDocHeight();
         var scrollBottom = documentHeight - windowHeight;
 
-        $('.background1').css('background-position-y', -((scrolled / scrollBottom) * (imgHeight - windowHeight)) + 'px');
+        $('.background').css('background-position-y', -((scrolled / scrollBottom) * (imgHeight - windowHeight)) + 'px');
     }
 
     /* Get the height of the current page - via http://stackoverflow.com/a/1147768/430191 */
