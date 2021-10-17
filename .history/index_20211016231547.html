@@ -79,6 +79,20 @@
             font-size: 3vw;
         }
 
+        .parallax {
+            /* The image used */
+            background-image: url('images/20211010224425098.gif');
+
+            /* Full height */
+            height: 100%;
+
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
         .container {
             padding: 10px;
             width: 2em;
@@ -96,6 +110,11 @@
             h1 {
                 font-size: 8vw;
                 font-family: "Avenir Next Heavy";
+
+            }
+
+            .bg {
+                /* padding: 0px; */
 
             }
 
@@ -262,7 +281,7 @@
 
 
         #background {
-            background-color: none;
+            /* background-color: #333; */
             background: url('images/20211010224425098.gif') repeat;
             background-repeat: no-repeat;
             background-position-x: 50%;
@@ -279,6 +298,7 @@
 
     <div id="background">
     </div>
+    <!-- <div class="parallax"></div> -->
 
     <div class="bg"></div>
 
@@ -431,6 +451,7 @@
 
     </div>
 
+    <!-- <div class="parallax"></div> -->
 
 
 </body>
