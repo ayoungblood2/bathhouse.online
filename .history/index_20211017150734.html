@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>bathhouse.online</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.svgrepo.com/show/335097/ink.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://www.svgrepo.com/show/335097/ink.svg">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://www.svgrepo.com/show/335097/ink.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="style.css">
     <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -260,7 +260,8 @@
         }
 
 
-        /* #background {
+
+        .background {
             background-color: none;
             background: url('images/20211010224425098.gif') repeat;
             background-repeat: no-repeat;
@@ -275,119 +276,31 @@
             background-position: center;
             background-size: cover;
 
-        } */
-
-
-        .background {
-            background-color: none;
-            /* background: url('images/20211010224425098.gif') repeat; */
-            background-repeat: no-repeat;
-            background-position-x: 50%;
-            position: relative;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            /* z-index: -1; */
-
-            background-position: center;
-            background-size: cover;
-
         }
 
 
         .background1 img {
             background-color: none;
-            /* background: url('images/20211010224425098.gif') repeat; */
+            background: url('images/20211010224425098.gif') repeat;
             background-repeat: no-repeat;
             background-position-x: 50%;
             position: fixed;
             width: 100%;
-            height: auto;
+            height: 100%;
             top: 0;
             left: 0;
-            /* z-index: -1; */
+            z-index: -1;
 
             background-position: center;
             background-size: cover;
 
             overflow: visible;
         }
-
-        summary {
-            /* color: #fff; */
-            /* background: #000; */
-            width: 5vw;
-            height: 5vw;
-            position: fixed;
-            top: 1rem;
-            left: 1rem;
-            z-index: 2;
-            border-radius: 50%;
-            background-image: url("https://www.svgrepo.com/show/335097/ink.svg");
-            background-size: 90% auto;
-            background-repeat: no-repeat;
-            background-position: center;
-            /* background-color: white; */
-
-            cursor: pointer;
-        }
-
-        [open] summary {
-            background-image: url("https://www.svgrepo.com/show/335110/lock.svg");
-            /* box-shadow: 0 0 0 2px #000; */
-            /* background-color: white; */
-
-            cursor: pointer;
-        }
-
-        /* for blink/webkit */
-        details summary::-webkit-details-marker {
-            display: none;
-        }
-
-        /* for firefox */
-        details>summary:first-of-type {
-            list-style: none;
-        }
-
-        summary+* {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            /* bottom: 0; */
-            /* padding: 1rem; */
-            /* padding-top: 3rem; */
-            /* background: #000; */
-            /* color: #fff; */
-            overflow-y: auto;
-        }
-
-        summary+* a {
-            /* color: #fff; */
-        }
-
-        summary:focus {
-            /* box-shadow: 0 0 0 0.25rem #aade87; */
-            outline: transparent;
-        }
     </style>
 
 <body>
 
-    <!-- <div id="background"></div> -->
-   
     <div class="background">
-        <img src="images/20211010224425098_2.jpeg" alt="Static: Bathhouse - Steamworks, Canada" loading="lazy">
-        <details open>
-            <!--added role=button to summary to resolve iOS funkiness-->
-            <summary role="button" aria-label="static image"></summary>
-            <div class="background1">
-                <img src="images/20211010224425098.gif" alt="Animation: Bathhouse - all archive scanned images"
-                    loading="lazy">
-            </div>
-        </details>
     </div>
 
     <div class="bg"></div>
@@ -546,25 +459,16 @@
 </body>
 
 <script>
-
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce))");
-    const details = document.querySelector(".background > details");
-
-    if (mediaQuery.matches) {
-        details.removeAttribute("open");
-    }
-
     $(window).scroll(function (e) {
         parallax();
     });
 
     var imgHeight = false;
 
-
     function parallax() {
         /* Only get the image height once */
         if (imgHeight === false) {
-            var image_url = $('.background').css('background-image'),
+            var image_url = $('#background').css('background-image'),
                 image;
 
             // Remove url() or in case of Chrome url("")
@@ -588,7 +492,7 @@
         var documentHeight = getDocHeight();
         var scrollBottom = documentHeight - windowHeight;
 
-        $('.background').css('background-position-y', -((scrolled / scrollBottom) * (imgHeight - windowHeight)) + 'px');
+        $('#background').css('background-position-y', -((scrolled / scrollBottom) * (imgHeight - windowHeight)) + 'px');
     }
 
     /* Get the height of the current page - via http://stackoverflow.com/a/1147768/430191 */
